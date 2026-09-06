@@ -74,6 +74,14 @@ const institutions = defineCollection({
   }),
 });
 
+const advisors = defineCollection({
+  loader: file('data/advisors.yaml', { parser: yamlList }),
+  schema: z.object({
+    name: z.string(),
+    affiliation: z.string(),
+  }),
+});
+
 const talks = defineCollection({
   loader: file('data/talks.yaml', { parser: yamlList }),
   schema: z.object({
@@ -147,4 +155,4 @@ const photos = defineCollection({
   }),
 });
 
-export const collections = { nav, members, institutions, talks, links, publications, home, news, pages, photos };
+export const collections = { nav, members, institutions, advisors, talks, links, publications, home, news, pages, photos };

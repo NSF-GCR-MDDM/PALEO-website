@@ -198,7 +198,8 @@ figcaption { color: var(--color-muted); font-size: 0.9rem; font-style: italic; m
 /* Collaboration ---------------------------------------------------------- */
 .collab-photo { margin: var(--space-4) 0 var(--space-4); }
 .collab-photo img { width: 100%; height: auto; border-radius: var(--radius); }
-.spokespersons { font-size: 1.15rem; }
+.spokespersons { font-size: 1.15rem; margin-bottom: var(--space-2); }
+.advisors { max-width: none; }
 .institution { border-top: 1px solid var(--color-rule); padding: var(--space-4) 0 var(--space-3); }
 .institution__head { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-2); }
 .institution .members { margin: 0; max-width: none; }

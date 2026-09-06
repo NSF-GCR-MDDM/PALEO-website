@@ -1,0 +1,11 @@
+# Geoscience Advisory Board, listed on the Collaboration page under the spokespersons.
+#
+# Fields: name, affiliation (free text; use the same spelling of an institution
+#         as data/institutions.yaml where the institution is a member, and the
+#         institution's own full name otherwise).
+- name: Robert Bodnar
+  affiliation: Virginia Tech and University of Arizona
+- name: William McDonough
+  affiliation: University of Maryland and Tohoku University
+- name: Steven Shirey
+  affiliation: Carnegie Institution for Science

@@ -7,6 +7,7 @@ import photo from '../assets/collaboration-photo.png';
 
 const institutions = await getCollection('institutions');
 const members = await getCollection('members');
+const advisors = await getCollection('advisors');
 
 // Make the build fail loudly if a member points to an institution that does not exist.
 for (const m of members) {
@@ -46,6 +47,15 @@ function marks(senior: boolean, board: boolean): string {
       <>
         {m.data.email ? <a href={`mailto:${m.data.email}`}>{m.data.name}</a> : m.data.name}
         {i < spokespersons.length - 1 && ', '}
+      </>
+    ))}
+  </p>
+
+  <p class="advisors">
+    <strong>Geoscience Advisory Board:</strong>{' '}
+    {advisors.map(({ data: a }, i) => (
+      <>
+        {a.name} ({a.affiliation}){i < advisors.length - 1 && ', '}
       </>
     ))}
   </p>

@@ -32,6 +32,7 @@ backslash before it: `title: "The \"paleo\" approach"`.
 | Top menu                 | `data/nav.yaml`                                |
 | Members                  | `data/members.yaml`                            |
 | Institutions             | `data/institutions.yaml`                       |
+| Geoscience Advisory Board | `data/advisors.yaml`                          |
 | Publications and theses  | `data/publications.bib`                        |
 | Talks                    | `data/talks.yaml` (PDFs go in `public/talks/`) |
 | Links page               | `data/links.yaml`                              |
@@ -88,6 +89,20 @@ For a logo, upload the image (PNG, JPG or SVG; anything from about 300 px wide
 up is fine, it is scaled to a small size) to `src/assets/logos/` and put its
 file name in `logo`. Leave `logo` out to show no logo. The current logo files
 are placeholders to be replaced.
+
+## Add someone to the Geoscience Advisory Board
+
+Add a block to `data/advisors.yaml`. They appear on the Collaboration page in the
+order of this file.
+
+```yaml
+- name: Jane Doe
+  affiliation: University of Somewhere and Somewhere Else
+```
+
+`affiliation` is free text. Where the institution is also a member of the
+collaboration, spell it exactly as in `data/institutions.yaml` so the page reads
+consistently; otherwise use the institution's own full name.
 
 ## Add a publication or thesis
 
