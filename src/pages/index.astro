@@ -16,7 +16,6 @@ const newsRendered = await Promise.all(news.map(async (item) => ({ item, Content
   <div slot="band" class="hero-band">
     <Image src={hero} alt="" widths={[800, 1200, 1600, 2000]} sizes="100vw" loading="eager" />
     <div class="hero-band__scrim"></div>
-    <span class="hero-band__chip">AI-generated placeholder image</span>
     <div class="hero-band__text">
       <div class="container">
         {home!.data.tagline && <p class="eyebrow">{home!.data.tagline}</p>}

@@ -4,7 +4,4 @@ headline: "PALEO: minerals as particle detectors"
 # To show a small line above the headline, add:  tagline: Some text
 ---
 
-(DRAFT)
-PALEO (Passive Asynchronous Lattice Exposure Observatory) is a collaboration of physicists, geologists, and material scientists searching for dark matter and neutrinos using ancient minerals....
-
-*Placeholder introduction. Replace this text by editing `content/home.md`.*
+PALEO is a collaboration of physicists, geologists, and materials scientists developing methods to search for dark matter and neutrinos in ancient minerals. Minerals can record particle interactions over geological timescales, giving exposures far longer than conventional detectors.
