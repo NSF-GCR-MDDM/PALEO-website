@@ -9,18 +9,23 @@ by the workflow in `.github/workflows/deploy.yml`.
 
 ## Where the site is published
 
-Pushing to `main` builds the site and publishes it to GitHub Pages. This needs
-one setting on the repository, once: **Settings > Pages > Source: GitHub Actions**.
+The site lives at **https://www.paleoscience.org**. Pushing to `main` builds it
+and publishes it to GitHub Pages, which serves it under that domain.
 
-Two things to change when the site moves to its permanent home:
+How the pieces fit together, in case any of them needs changing:
 
-1. `base` in `astro.config.mjs` is the sub-folder the site is served from.
-   GitHub Pages serves a repository called `<name>` at
-   `https://<account>.github.io/<name>/`, so `base` is the repository name.
-   Set it to `'/'` if the site ever lives at the root of a domain, which is the
-   case for a repository named `<organisation>.github.io` or for a custom domain.
-2. `src/layouts/BaseLayout.astro` contains a `robots` line that keeps the draft
-   out of search engines. Delete that line when the site is ready to be public.
+- **Repository settings > Pages:** Source is **GitHub Actions**, and Custom domain
+  is `www.paleoscience.org`. The domain lives only in this setting; a `CNAME`
+  file in the repository would be ignored, because we deploy through Actions.
+- **DNS for paleoscience.org** (managed wherever the domain is registered):
+  four `A` records and four `AAAA` records for `paleoscience.org` pointing at
+  GitHub Pages, and a `CNAME` record pointing `www` at `nsf-gcr-mddm.github.io`.
+  Domain "forwarding" at the registrar must stay off; it fights the custom
+  domain setting and produces a redirect loop.
+- **`astro.config.mjs`:** `site` is the domain, and `base` is `'/'` because the
+  site is served from the root of its own domain. If the custom domain is ever
+  removed, the site falls back to `https://nsf-gcr-mddm.github.io/PALEO-website/`,
+  and `base` must then become `'/PALEO-website'`.
 
 - **Running locally:** install Node.js 22 or later, then
 
